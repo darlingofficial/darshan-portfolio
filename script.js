@@ -80,119 +80,97 @@ if (heroVideos.length >= 2) {
 }
 
 
-/* Loader */
+/* Fullscreen Video Popup */
 
-window.addEventListener("load",()=>{
+const videoLinks=document.querySelectorAll(".video-link");
+const modal=document.getElementById("video-modal");
+const popupVideo=document.getElementById("popup-video");
+const closeVideo=document.getElementById("close-video");
 
-const loader=document.getElementById("loader");
-const loadingText=document.getElementById("loading-text");
+videoLinks.forEach((link)=>{
 
-let count=0;
+link.addEventListener("click",(e)=>{
 
-const interval=setInterval(()=>{
+e.preventDefault();
 
-count+=5;
-loadingText.textContent=`LOADING ${count}%`;
+const source=link.querySelector("source");
 
-if(count>=100){
+if(source){
 
-clearInterval(interval);
-
-setTimeout(()=>{
-loader.style.opacity="0";
-
-setTimeout(()=>{
-loader.style.display="none";
-},800);
-
-},500);
-
-}
-
-},60);
-
-});
-
-/* Cursor Glow */
-
-const glow=document.querySelector(".cursor-glow");
-
-if(glow){
-
-document.addEventListener("mousemove",(e)=>{
-glow.style.left=e.clientX+"px";
-glow.style.top=e.clientY+"px";
-});
-
-}
-
-/* Typing Animation */
-
-const heroHeading=document.querySelector("h1");
-
-if(heroHeading){
-
-const texts=[
-"Videographer.",
-"Editor.",
-"Storyteller."
-];
-
-let index=0;
-
-setInterval(()=>{
-heroHeading.textContent=texts[index];
-index=(index+1)%texts.length;
-},2500);
-
-}
-
-/* Music Toggle */
-
-const music=document.getElementById("bg-music");
-const musicToggle=document.querySelector(".music-toggle");
-
-if(musicToggle && music){
-
-musicToggle.addEventListener("click",()=>{
-
-if(music.paused){
-music.play();
-musicToggle.style.opacity="1";
-}else{
-music.pause();
-musicToggle.style.opacity=".5";
-}
-
-});
-
-}
-
-/* Scroll Animation */
-
-const animated=document.querySelectorAll(".reel-card,.service-list div");
-
-const observer=new IntersectionObserver((entries)=>{
-
-entries.forEach((entry)=>{
-
-if(entry.isIntersecting){
-
-entry.target.style.opacity="1";
-entry.target.style.transform="translateY(0px)";
+popupVideo.src=source.src;
+modal.style.display="flex";
+popupVideo.play();
 
 }
 
 });
 
-},{threshold:.1});
+});
 
-animated.forEach((el,index)=>{
+if(closeVideo){
 
-el.style.opacity="0";
-el.style.transform="translateY(50px)";
-el.style.transition=`all .8s ease ${index*.08}s`;
+closeVideo.addEventListener("click",()=>{
 
-observer.observe(el);
+modal.style.display="none";
+popupVideo.pause();
+popupVideo.src="";
 
 });
+
+}
+
+/* Floating Particles */
+
+const particles=document.getElementById("particles");
+
+if(particles){
+
+for(let i=0;i<50;i++){
+
+const particle=document.createElement("div");
+
+particle.classList.add("particle");
+
+particle.style.left=Math.random()*100+"vw";
+particle.style.animationDuration=(5+Math.random()*10)+"s";
+particle.style.opacity=Math.random();
+
+particles.appendChild(particle);
+
+}
+
+}
+
+/* Fake Visitor Counter */
+
+const visitorCounter=document.createElement("div");
+
+visitorCounter.innerHTML="🔥 10,000+ Portfolio Views";
+visitorCounter.style.position="fixed";
+visitorCounter.style.left="20px";
+visitorCounter.style.top="100px";
+visitorCounter.style.padding="12px 18px";
+visitorCounter.style.background="#111";
+visitorCounter.style.border="1px solid rgba(255,255,255,.1)";
+visitorCounter.style.borderRadius="8px";
+visitorCounter.style.zIndex="99999";
+
+document.body.appendChild(visitorCounter);
+
+/* Form Submission */
+
+const bookingForm=document.querySelector(".booking-form");
+
+if(bookingForm){
+
+bookingForm.addEventListener("submit",(e)=>{
+
+e.preventDefault();
+
+alert("Inquiry Submitted Successfully");
+
+bookingForm.reset();
+
+});
+
+}

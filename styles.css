@@ -616,120 +616,96 @@ h3 {
 }
 
 
-/* Loader */
+/* Fullscreen Video Popup */
 
-#loader{
+#video-modal{
 position:fixed;
 inset:0;
-background:#000;
-display:flex;
+background:rgba(0,0,0,.96);
+display:none;
 align-items:center;
 justify-content:center;
 z-index:999999;
-transition:opacity .8s ease;
 }
 
-.loader-content{
-text-align:center;
+#popup-video{
+width:90%;
+max-width:1200px;
+border-radius:12px;
 }
 
-#loading-text{
-color:#aaa;
-letter-spacing:4px;
+#close-video{
+position:absolute;
+top:20px;
+right:30px;
+font-size:50px;
+cursor:pointer;
+color:white;
 }
 
-/* Floating Buttons */
+/* Booking Form */
 
-.floating-whatsapp,
-.floating-instagram{
-position:fixed;
-right:20px;
-z-index:99999;
+.booking-form{
+display:grid;
+gap:16px;
+max-width:700px;
 }
 
-.floating-whatsapp{bottom:20px;}
-.floating-instagram{bottom:90px;}
-
-.floating-whatsapp img,
-.floating-instagram img{
-width:58px;
-height:58px;
-border-radius:50%;
-box-shadow:0 12px 30px rgba(0,0,0,.45);
-}
-
-/* Cursor Glow */
-
-.cursor-glow{
-position:fixed;
-width:320px;
-height:320px;
-background:radial-gradient(circle,rgba(201,161,92,.14),transparent 70%);
-pointer-events:none;
-transform:translate(-50%,-50%);
-z-index:0;
-}
-
-/* Resume Button */
-
-.resume-btn{
-position:fixed;
-left:20px;
-bottom:20px;
-padding:12px 18px;
-background:#c9a15c;
-color:#000;
-font-weight:700;
-border-radius:8px;
-z-index:99999;
-}
-
-/* Music Button */
-
-.music-toggle{
-position:fixed;
-top:100px;
-right:20px;
-width:55px;
-height:55px;
-display:flex;
-align-items:center;
-justify-content:center;
+.booking-form input,
+.booking-form textarea{
+padding:16px;
 background:#111;
 border:1px solid rgba(255,255,255,.1);
-border-radius:50%;
-font-size:24px;
+color:white;
+border-radius:8px;
+}
+
+.booking-form button{
+padding:16px;
+background:#c9a15c;
+border:none;
+font-weight:700;
 cursor:pointer;
-z-index:99999;
+border-radius:8px;
 }
 
-/* Typing */
+/* Particles */
 
-.typing-text::after{
-content:'|';
-animation:blink .6s infinite;
+#particles{
+position:fixed;
+inset:0;
+pointer-events:none;
+z-index:0;
+overflow:hidden;
 }
 
-@keyframes blink{
-50%{opacity:0;}
+.particle{
+position:absolute;
+width:4px;
+height:4px;
+background:rgba(255,255,255,.15);
+border-radius:50%;
+animation:floatParticle linear infinite;
 }
 
-/* Reel hover */
-
-.reel-card:hover{
-transform:translateY(-8px) scale(1.02);
-box-shadow:0 25px 60px rgba(0,0,0,.45);
+@keyframes floatParticle{
+from{
+transform:translateY(100vh);
+}
+to{
+transform:translateY(-100vh);
+}
 }
 
-@media(max-width:600px){
+/* Testimonials */
 
-.resume-btn{
-font-size:.8rem;
-padding:10px 14px;
+.testimonials-section .service-list div{
+background:rgba(255,255,255,.03);
+backdrop-filter:blur(10px);
 }
 
-.cursor-glow{
-display:none;
-}
+/* Hover */
 
+.booking-form button:hover{
+transform:translateY(-2px);
 }

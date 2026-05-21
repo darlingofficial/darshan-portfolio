@@ -24,17 +24,6 @@
     </script>
   </head>
   <body>
-<div id="loader">
-  <div class="loader-content">
-    <h1>DARSHAN VISUALS</h1>
-    <p id="loading-text">LOADING 0%</p>
-  </div>
-</div>
-
-<div class="cursor-glow"></div>
-<a href="resume.pdf" class="resume-btn" download>Download Resume</a>
-<div class="music-toggle">♫</div>
-
     <header class="site-header">
       <a class="brand" href="#top">
         <span>Darshan B Anurshettar</span>
@@ -260,38 +249,50 @@
       </section>
     </main>
     
-<section class="section">
+<div id="video-modal">
+  <span id="close-video">&times;</span>
+  <video id="popup-video" controls autoplay></video>
+</div>
+
+<div id="particles"></div>
+
+<section class="section testimonials-section">
   <div class="section-heading">
-    <p class="eyebrow">Skills</p>
-    <h2>Creative Toolkit</h2>
+    <p class="eyebrow">Testimonials</p>
+    <h2>Client Feedback</h2>
   </div>
 
   <div class="service-list">
-    <div><h3>Premiere Pro</h3><p>Professional editing workflows.</p></div>
-    <div><h3>DaVinci Resolve</h3><p>Color grading and cinematic finishing.</p></div>
-    <div><h3>After Effects</h3><p>Motion graphics and visual effects.</p></div>
+    <div>
+      <h3>Event Client</h3>
+      <p>“Amazing cinematic work and editing quality.”</p>
+    </div>
+
+    <div>
+      <h3>Creator Client</h3>
+      <p>“Professional reels and fast delivery.”</p>
+    </div>
+
+    <div>
+      <h3>Wedding Client</h3>
+      <p>“Captured emotions beautifully.”</p>
+    </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section booking-section">
   <div class="section-heading">
-    <p class="eyebrow">Availability</p>
-    <h2>Available for Freelance Work</h2>
+    <p class="eyebrow">Bookings</p>
+    <h2>Book Your Shoot</h2>
   </div>
-  <p class="hero-copy">Open for events, cinematic edits, reels, and collaborations.</p>
+
+  <form class="booking-form">
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Your Email">
+    <textarea placeholder="Describe Your Project"></textarea>
+    <button type="submit">Send Inquiry</button>
+  </form>
 </section>
-
-<a href="https://wa.me/917483284015" class="floating-whatsapp" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-</a>
-
-<a href="https://instagram.com/darling_darsh____" class="floating-instagram" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
-</a>
-
-<audio id="bg-music" loop>
-  <source src="background-music.mp3" type="audio/mpeg">
-</audio>
 
 <script src="script.js"></script>
   </body>
