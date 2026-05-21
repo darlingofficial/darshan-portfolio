@@ -78,3 +78,21 @@ if (heroVideos.length >= 2) {
   });
   window.setInterval(rotateHeroShowreel, 3000);
 }
+
+
+window.addEventListener("load",()=>{
+const loader=document.getElementById("loader");
+setTimeout(()=>{
+loader.style.opacity="0";
+setTimeout(()=>{loader.style.display="none";},800);
+},1200);
+});
+
+const glow=document.querySelector(".cursor-glow");
+
+if(glow){
+document.addEventListener("mousemove",(e)=>{
+glow.style.left=e.clientX+"px";
+glow.style.top=e.clientY+"px";
+});
+}

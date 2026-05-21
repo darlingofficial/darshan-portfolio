@@ -614,3 +614,31 @@ h3 {
     max-width: 280px;
   }
 }
+
+
+#loader{
+position:fixed;inset:0;background:#000;z-index:999999;display:flex;
+align-items:center;justify-content:center;transition:opacity .8s ease;
+}
+
+#loader h1{
+color:#fff;font-size:clamp(2rem,5vw,4rem);letter-spacing:8px;
+}
+
+.floating-whatsapp,.floating-instagram{
+position:fixed;right:20px;z-index:99999;
+}
+
+.floating-whatsapp{bottom:20px;}
+.floating-instagram{bottom:90px;}
+
+.floating-whatsapp img,.floating-instagram img{
+width:58px;height:58px;border-radius:50%;
+box-shadow:0 12px 30px rgba(0,0,0,.45);
+}
+
+.cursor-glow{
+position:fixed;width:320px;height:320px;
+background:radial-gradient(circle,rgba(201,161,92,.14),transparent 70%);
+pointer-events:none;transform:translate(-50%,-50%);z-index:0;
+}
