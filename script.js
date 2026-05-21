@@ -1,11 +1,11 @@
 const previewVideos = document.querySelectorAll(".video-link video");
 const heroVideos = document.querySelectorAll(".hero-bg-video");
 const heroSources = [
-  "assets/videos/cinematic-reel.mp4",
-  "assets/videos/family-event-edit.mp4",
-  "assets/videos/festival-edit.mp4",
-  "assets/videos/bike-edit.mp4",
-  "assets/videos/pre-wedding-edit.mp4",
+  "cinematic-reel.mp4",
+  "family-event-edit.mp4",
+  "festival-edit.mp4",
+  "bike-edit.mp4",
+  "pre-wedding-edit.mp4",
 ];
 
 previewVideos.forEach((video) => {
