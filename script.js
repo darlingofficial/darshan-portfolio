@@ -40,10 +40,11 @@ let activeHero = 0;
 
 function setHeroVideo(video, source) {
   video.pause();
-  video.innerHTML = `<source src="${source}" type="video/mp4">`;
+  video.src = source;
   video.load();
   video.muted = true;
   video.playsInline = true;
+  video.loop = true;
   video.currentTime = 0;
 }
 
