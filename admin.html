@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Darshan Admin Panel</title>
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div class="admin-container">
+  <h1>DARSHAN VISUALS ADMIN</h1>
+
+  <div class="card">
+    <h2>Visitor Analytics</h2>
+    <p>Total Visitors: <span id="visitor-count">0</span></p>
+  </div>
+
+  <div class="card">
+    <h2>Upload Project</h2>
+    <input type="text" placeholder="Project Title" id="project-title">
+    <input type="file" id="project-file">
+    <button id="upload-btn">Upload</button>
+  </div>
+
+  <div class="card">
+    <h2>Client Inquiries</h2>
+    <div id="inquiries"></div>
+  </div>
+</div>
+
+<script type="module" src="firebase.js"></script>
+</body>
+</html>
