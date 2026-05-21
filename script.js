@@ -80,19 +80,119 @@ if (heroVideos.length >= 2) {
 }
 
 
+/* Loader */
+
 window.addEventListener("load",()=>{
+
 const loader=document.getElementById("loader");
+const loadingText=document.getElementById("loading-text");
+
+let count=0;
+
+const interval=setInterval(()=>{
+
+count+=5;
+loadingText.textContent=`LOADING ${count}%`;
+
+if(count>=100){
+
+clearInterval(interval);
+
 setTimeout(()=>{
 loader.style.opacity="0";
-setTimeout(()=>{loader.style.display="none";},800);
-},1200);
+
+setTimeout(()=>{
+loader.style.display="none";
+},800);
+
+},500);
+
+}
+
+},60);
+
 });
+
+/* Cursor Glow */
 
 const glow=document.querySelector(".cursor-glow");
 
 if(glow){
+
 document.addEventListener("mousemove",(e)=>{
 glow.style.left=e.clientX+"px";
 glow.style.top=e.clientY+"px";
 });
+
 }
+
+/* Typing Animation */
+
+const heroHeading=document.querySelector("h1");
+
+if(heroHeading){
+
+const texts=[
+"Videographer.",
+"Editor.",
+"Storyteller."
+];
+
+let index=0;
+
+setInterval(()=>{
+heroHeading.textContent=texts[index];
+index=(index+1)%texts.length;
+},2500);
+
+}
+
+/* Music Toggle */
+
+const music=document.getElementById("bg-music");
+const musicToggle=document.querySelector(".music-toggle");
+
+if(musicToggle && music){
+
+musicToggle.addEventListener("click",()=>{
+
+if(music.paused){
+music.play();
+musicToggle.style.opacity="1";
+}else{
+music.pause();
+musicToggle.style.opacity=".5";
+}
+
+});
+
+}
+
+/* Scroll Animation */
+
+const animated=document.querySelectorAll(".reel-card,.service-list div");
+
+const observer=new IntersectionObserver((entries)=>{
+
+entries.forEach((entry)=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+entry.target.style.transform="translateY(0px)";
+
+}
+
+});
+
+},{threshold:.1});
+
+animated.forEach((el,index)=>{
+
+el.style.opacity="0";
+el.style.transform="translateY(50px)";
+el.style.transition=`all .8s ease ${index*.08}s`;
+
+observer.observe(el);
+
+});

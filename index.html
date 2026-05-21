@@ -24,7 +24,17 @@
     </script>
   </head>
   <body>
-<div id="loader"><h1>DARSHAN VISUALS</h1></div>
+<div id="loader">
+  <div class="loader-content">
+    <h1>DARSHAN VISUALS</h1>
+    <p id="loading-text">LOADING 0%</p>
+  </div>
+</div>
+
+<div class="cursor-glow"></div>
+<a href="resume.pdf" class="resume-btn" download>Download Resume</a>
+<div class="music-toggle">♫</div>
+
     <header class="site-header">
       <a class="brand" href="#top">
         <span>Darshan B Anurshettar</span>
@@ -249,9 +259,27 @@
         </div>
       </section>
     </main>
-    <script src="script.js"></script>
-  
-<div class="cursor-glow"></div>
+    
+<section class="section">
+  <div class="section-heading">
+    <p class="eyebrow">Skills</p>
+    <h2>Creative Toolkit</h2>
+  </div>
+
+  <div class="service-list">
+    <div><h3>Premiere Pro</h3><p>Professional editing workflows.</p></div>
+    <div><h3>DaVinci Resolve</h3><p>Color grading and cinematic finishing.</p></div>
+    <div><h3>After Effects</h3><p>Motion graphics and visual effects.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-heading">
+    <p class="eyebrow">Availability</p>
+    <h2>Available for Freelance Work</h2>
+  </div>
+  <p class="hero-copy">Open for events, cinematic edits, reels, and collaborations.</p>
+</section>
 
 <a href="https://wa.me/917483284015" class="floating-whatsapp" target="_blank">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
@@ -260,5 +288,11 @@
 <a href="https://instagram.com/darling_darsh____" class="floating-instagram" target="_blank">
 <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
 </a>
-</body>
+
+<audio id="bg-music" loop>
+  <source src="background-music.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+  </body>
 </html>

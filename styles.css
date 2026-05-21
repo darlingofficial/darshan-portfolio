@@ -616,29 +616,120 @@ h3 {
 }
 
 
+/* Loader */
+
 #loader{
-position:fixed;inset:0;background:#000;z-index:999999;display:flex;
-align-items:center;justify-content:center;transition:opacity .8s ease;
+position:fixed;
+inset:0;
+background:#000;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:999999;
+transition:opacity .8s ease;
 }
 
-#loader h1{
-color:#fff;font-size:clamp(2rem,5vw,4rem);letter-spacing:8px;
+.loader-content{
+text-align:center;
 }
 
-.floating-whatsapp,.floating-instagram{
-position:fixed;right:20px;z-index:99999;
+#loading-text{
+color:#aaa;
+letter-spacing:4px;
+}
+
+/* Floating Buttons */
+
+.floating-whatsapp,
+.floating-instagram{
+position:fixed;
+right:20px;
+z-index:99999;
 }
 
 .floating-whatsapp{bottom:20px;}
 .floating-instagram{bottom:90px;}
 
-.floating-whatsapp img,.floating-instagram img{
-width:58px;height:58px;border-radius:50%;
+.floating-whatsapp img,
+.floating-instagram img{
+width:58px;
+height:58px;
+border-radius:50%;
 box-shadow:0 12px 30px rgba(0,0,0,.45);
 }
 
+/* Cursor Glow */
+
 .cursor-glow{
-position:fixed;width:320px;height:320px;
+position:fixed;
+width:320px;
+height:320px;
 background:radial-gradient(circle,rgba(201,161,92,.14),transparent 70%);
-pointer-events:none;transform:translate(-50%,-50%);z-index:0;
+pointer-events:none;
+transform:translate(-50%,-50%);
+z-index:0;
+}
+
+/* Resume Button */
+
+.resume-btn{
+position:fixed;
+left:20px;
+bottom:20px;
+padding:12px 18px;
+background:#c9a15c;
+color:#000;
+font-weight:700;
+border-radius:8px;
+z-index:99999;
+}
+
+/* Music Button */
+
+.music-toggle{
+position:fixed;
+top:100px;
+right:20px;
+width:55px;
+height:55px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#111;
+border:1px solid rgba(255,255,255,.1);
+border-radius:50%;
+font-size:24px;
+cursor:pointer;
+z-index:99999;
+}
+
+/* Typing */
+
+.typing-text::after{
+content:'|';
+animation:blink .6s infinite;
+}
+
+@keyframes blink{
+50%{opacity:0;}
+}
+
+/* Reel hover */
+
+.reel-card:hover{
+transform:translateY(-8px) scale(1.02);
+box-shadow:0 25px 60px rgba(0,0,0,.45);
+}
+
+@media(max-width:600px){
+
+.resume-btn{
+font-size:.8rem;
+padding:10px 14px;
+}
+
+.cursor-glow{
+display:none;
+}
+
 }
