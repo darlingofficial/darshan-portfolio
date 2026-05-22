@@ -1,0 +1,106 @@
+
+/* === CGI / VFX / SFX UPGRADE === */
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+background:
+radial-gradient(circle at var(--x,50%) var(--y,50%), rgba(201,161,92,.12), transparent 18rem);
+z-index:9;
+transition:background .08s linear;
+}
+
+/* floating particles */
+
+.cinematic-particles{
+position:fixed;
+inset:0;
+pointer-events:none;
+overflow:hidden;
+z-index:2;
+}
+
+.cinematic-particles span{
+position:absolute;
+width:4px;
+height:4px;
+border-radius:50%;
+background:rgba(255,255,255,.25);
+animation:floatParticle linear infinite;
+}
+
+@keyframes floatParticle{
+from{
+transform:translateY(100vh) scale(0.4);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+to{
+transform:translateY(-20vh) scale(1);
+opacity:0;
+}
+}
+
+/* cinematic glow */
+
+.reel-card{
+transition:
+transform .35s ease,
+box-shadow .35s ease,
+border-color .35s ease !important;
+}
+
+.reel-card:hover{
+box-shadow:
+0 0 30px rgba(201,161,92,.18),
+0 0 100px rgba(201,161,92,.08) !important;
+}
+
+/* magnetic buttons */
+
+.button{
+transition:
+transform .18s ease,
+background .2s ease,
+border-color .2s ease !important;
+}
+
+/* scroll reveal */
+
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:
+opacity .8s ease,
+transform .8s ease;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+/* cinematic loader */
+
+.cinematic-loader{
+position:fixed;
+inset:0;
+background:#08090b;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:99999;
+transition:opacity .8s ease;
+}
+
+.cinematic-loader h1{
+font-family:"Playfair Display",serif;
+font-size:clamp(2rem,6vw,5rem);
+color:#c9a15c;
+letter-spacing:4px;
+text-shadow:0 0 30px rgba(201,161,92,.4);
+}

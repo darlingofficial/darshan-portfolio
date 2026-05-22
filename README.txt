@@ -1,29 +1,17 @@
 
-DARSHAN VISUALS - FIREBASE UPGRADE
+UPLOAD INSTRUCTIONS
 
-FILES INCLUDED:
-- admin.html
-- firebase.js
-- admin.css
+1. Open your existing:
+- styles.css
+- script.js
 
-SETUP:
+2. Paste:
+- vfx-upgrade.css at END of styles.css
+- vfx-upgrade.js at END of script.js
 
-1. Go to https://firebase.google.com
-2. Create Project
-3. Enable Firestore Database
-4. Copy Firebase Config
-5. Replace inside firebase.js
+3. Save files
 
-UPLOAD:
-- admin.html
-- firebase.js
-- admin.css
+4. Upload updated files to GitHub
 
-Then open:
-yourwebsite/admin.html
-
-Features:
-- Visitor Analytics
-- Admin Dashboard
-- Project Upload System
-- Firebase Database Ready
+5. Hard refresh:
+Ctrl + Shift + R
