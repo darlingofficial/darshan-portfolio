@@ -104,3 +104,134 @@ color:#c9a15c;
 letter-spacing:4px;
 text-shadow:0 0 30px rgba(201,161,92,.4);
 }
+
+/* ===== DARSH VFX COMPLETE UPGRADE ===== */
+
+.cursor-particle{
+position:fixed;
+width:6px;
+height:6px;
+background:#c9a15c;
+border-radius:50%;
+pointer-events:none;
+z-index:9999;
+animation:particleFade 1.2s linear forwards;
+box-shadow:0 0 12px #c9a15c;
+}
+
+@keyframes particleFade{
+0%{opacity:1;transform:scale(1);}
+100%{opacity:0;transform:translateY(-60px) scale(0);}
+}
+
+.reel-card video{
+transition:transform .6s ease,filter .5s ease;
+}
+
+.reel-card:hover video{
+transform:scale(1.08);
+filter:brightness(1.1);
+}
+
+.signature-note{
+position:relative;
+overflow:hidden;
+animation:goldPulse 4s ease infinite;
+text-shadow:0 0 12px rgba(201,161,92,.5),0 0 42px rgba(201,161,92,.2);
+}
+
+.signature-note::after{
+content:"";
+position:absolute;
+top:0;
+left:-120%;
+width:120%;
+height:100%;
+background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);
+animation:lightSweep 4s linear infinite;
+}
+
+@keyframes lightSweep{
+100%{left:130%;}
+}
+
+@keyframes goldPulse{
+50%{opacity:.7;}
+}
+
+.cinema-modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.94);
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:99999;
+backdrop-filter:blur(10px);
+animation:fadeIn .4s ease;
+}
+
+.cinema-modal video{
+max-width:90%;
+max-height:90%;
+border-radius:12px;
+}
+
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+.dust{
+position:fixed;
+bottom:-20px;
+width:2px;
+height:2px;
+background:rgba(255,255,255,.25);
+border-radius:50%;
+pointer-events:none;
+animation:dustFloat linear infinite;
+z-index:1;
+}
+
+@keyframes dustFloat{
+to{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+
+.hero::before{
+content:"";
+position:absolute;
+top:10%;
+left:-20%;
+width:50%;
+height:300px;
+background:radial-gradient(circle,rgba(201,161,92,.22),transparent 70%);
+filter:blur(40px);
+animation:flareMove 10s linear infinite;
+}
+
+@keyframes flareMove{
+50%{left:70%;}
+100%{left:-20%;}
+}
+
+body::after{
+content:"";
+position:fixed;
+inset:0;
+background-image:url("https://grainy-gradients.vercel.app/noise.svg");
+opacity:.08;
+mix-blend-mode:soft-light;
+pointer-events:none;
+z-index:999;
+animation:grainMove .25s steps(2) infinite;
+}
+
+@keyframes grainMove{
+50%{
+transform:translate(1px,-1px);
+}
+}
