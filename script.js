@@ -12,11 +12,11 @@ setTimeout(()=>{
 document.getElementById('loader').style.display='none';
 },1000);
 
-},1500);
+},1800);
 
 });
 
-/* CURSOR GLOW */
+/* CURSOR */
 
 const glow=document.querySelector('.cursor-glow');
 
@@ -27,7 +27,7 @@ glow.style.top=e.clientY+'px';
 
 });
 
-/* THREE JS */
+/* THREE JS WORLD */
 
 const scene=new THREE.Scene();
 
@@ -51,13 +51,13 @@ document.getElementById('canvas-container').appendChild(renderer.domElement);
 
 const particlesGeometry=new THREE.BufferGeometry();
 
-const count=7000;
+const count=10000;
 
 const positions=new Float32Array(count*3);
 
 for(let i=0;i<count*3;i++){
 
-positions[i]=(Math.random()-0.5)*35;
+positions[i]=(Math.random()-0.5)*50;
 
 }
 
@@ -67,7 +67,7 @@ new THREE.BufferAttribute(positions,3)
 );
 
 const particlesMaterial=new THREE.PointsMaterial({
-size:0.03,
+size:0.025,
 color:0xd4a84f
 });
 
@@ -78,29 +78,57 @@ particlesMaterial
 
 scene.add(particles);
 
-/* LIGHT */
+/* FLOATING TORUS */
 
-const light=new THREE.PointLight(0xd4a84f,4,100);
+const torusGeometry=new THREE.TorusGeometry(1.2,0.04,16,100);
 
-light.position.set(2,3,4);
+const torusMaterial=new THREE.MeshStandardMaterial({
+color:0xd4a84f,
+emissive:0xd4a84f,
+emissiveIntensity:1
+});
 
-scene.add(light);
+const torus=new THREE.Mesh(
+torusGeometry,
+torusMaterial
+);
+
+scene.add(torus);
+
+torus.position.set(2,0,-2);
+
+/* LIGHTS */
+
+const light1=new THREE.PointLight(0xd4a84f,4,100);
+
+light1.position.set(2,2,4);
+
+scene.add(light1);
+
+const light2=new THREE.PointLight(0xffffff,1,100);
+
+light2.position.set(-3,-2,2);
+
+scene.add(light2);
 
 camera.position.z=5;
 
-/* PARALLAX */
+/* MOUSE PARALLAX */
 
 document.addEventListener('mousemove',(e)=>{
 
-const x=(e.clientX/window.innerWidth-0.5)*0.8;
-const y=(e.clientY/window.innerHeight-0.5)*0.8;
+const x=(e.clientX/window.innerWidth-0.5)*1.2;
+const y=(e.clientY/window.innerHeight-0.5)*1.2;
 
-particles.rotation.y=x;
-particles.rotation.x=y;
+particles.rotation.y=x*0.2;
+particles.rotation.x=y*0.2;
+
+torus.rotation.x=y;
+torus.rotation.y=x;
 
 });
 
-/* REEL HOVER */
+/* REELS */
 
 const cards=document.querySelectorAll('.reel-card');
 
@@ -125,7 +153,9 @@ function animate(){
 
 requestAnimationFrame(animate);
 
-particles.rotation.y += 0.0009;
+particles.rotation.y += 0.0007;
+
+torus.rotation.z += 0.01;
 
 renderer.render(scene,camera);
 
