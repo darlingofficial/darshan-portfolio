@@ -1,1 +1,253 @@
-<html><head><title>Darshan Visuals</title><link rel='stylesheet' href='styles.css'></head><body><header class='navbar'><div class='logo'>Darshan Visuals</div><nav><a href='#'>Portfolio</a><a href='#'>Reels</a></nav></header><section class='hero'><h1>Portfolio Pieces</h1></section><section class='portfolio-grid'><div class='card' onclick="openModal('cinematic-reel.mp4')"><video muted loop><source src='cinematic-reel.mp4'></video><div class='info'><span>CINEMATIC REEL</span><h3>Visual Reel</h3></div></div></section><div id='modal' class='modal'><span class='close' onclick='closeModal()'>×</span><video id='modalVideo' controls autoplay></video></div><script src='script.js'></script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Darshan B Anurshettar is a Bengaluru-based videographer and editor creating cinematic reels, event films, pre-wedding edits, and brand content."
+    >
+    <title>Darshan B Anurshettar | Videographer & Editor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-XXXXXXXXXX");
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top">
+        <span>Darshan B Anurshettar</span>
+        <small>Videography / Editing</small>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Inquiry</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="Introduction">
+        <div class="hero-media" aria-hidden="true">
+          <video class="hero-bg-video is-active" muted autoplay loop playsinline preload="auto">
+            <source src="cinematic-reel.mp4" type="video/mp4">
+          </video>
+          <video class="hero-bg-video" muted autoplay loop playsinline preload="auto"></video>
+          <div class="frame-line"></div>
+          <div class="grain"></div>
+          <div class="spotlight one"></div>
+          <div class="spotlight two"></div>
+        </div>
+
+        <div class="hero-content">
+          <p class="signature-note">Darshan Visuals</p>
+          <p class="eyebrow">Bengaluru Videographer & Editor</p>
+          <h1>Cinematic visuals for events, brands, creators, and stories.</h1>
+          <p class="hero-copy">
+            Cinematic short-form videos, event highlights, pre-wedding stories,
+            and brand content with polished visuals and clean pacing.
+          </p>
+          <div class="hero-actions">
+            <a
+              class="button primary"
+              href="https://wa.me/917483284015?text=Hi%20Darshan%2C%20I%20want%20to%20inquire%20about%20a%20videography%20or%20editing%20project."
+            >
+              Start a WhatsApp Inquiry
+            </a>
+            <a class="button secondary" href="https://instagram.com/darling_darsh____">
+              View Instagram Portfolio
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-reel-panel" aria-label="Showreel information">
+          <span>Auto preview showreel</span>
+          <strong>Full-screen cuts from selected work</strong>
+          <small>Muted background playback</small>
+        </div>
+
+        <div class="hero-card" aria-label="Profile details">
+          <span>Based in</span>
+          <strong>Yelahanka, Kattigenahalli</strong>
+          <span>Bengaluru 560064</span>
+        </div>
+      </section>
+
+      <section class="section statement">
+        <p>
+          I create sharp, cinematic video work for people, events, creators, and businesses
+          that want their story to feel polished before it reaches the screen.
+        </p>
+      </section>
+
+      <section class="section" id="work">
+        <div class="section-heading">
+          <p class="eyebrow">Selected Work</p>
+          <h2>Portfolio pieces</h2>
+        </div>
+
+        <div class="work-grid video-grid">
+          <article class="reel-card featured">
+            <a class="video-link" href="https://www.instagram.com/reel/DXw6bn1utTu/?igsh=MWF1NXBodXllNjFpbw==" aria-label="Open cinematic reel on Instagram">
+              <video muted loop playsinline preload="metadata" poster="">
+                <source src="cinematic-reel.mp4" type="video/mp4">
+              </video>
+              <span class="preview-fallback">Add cinematic-reel.mp4</span>
+            </a>
+            <div class="reel-meta">
+              <span>Cinematic Reel</span>
+              <strong>Visual reel</strong>
+            </div>
+          </article>
+          <article class="reel-card">
+            <a class="video-link" href="https://www.instagram.com/reel/DXy9-jXhLxi/?igsh=NmIwaGs0OGVhamd1" aria-label="Open event edit on Instagram">
+              <video muted loop playsinline preload="metadata">
+                <source src="event-edit.mp4" type="video/mp4">
+              </video>
+              <span class="preview-fallback">Add event-edit.mp4</span>
+            </a>
+            <div class="reel-meta">
+              <span>Event Edit</span>
+              <strong>Event highlight</strong>
+            </div>
+          </article>
+          <article class="reel-card">
+            <a class="video-link" href="https://www.instagram.com/reel/DU3HI9OErex/?igsh=MXBjbmZmZDAxbTZvNg==" aria-label="Open family event edit on Instagram">
+              <video muted loop playsinline preload="metadata">
+                <source src="family-event-edit.mp4" type="video/mp4">
+              </video>
+              <span class="preview-fallback">Add family-event-edit.mp4</span>
+            </a>
+            <div class="reel-meta">
+              <span>Family Event</span>
+              <strong>Family story</strong>
+            </div>
+          </article>
+          <article class="reel-card">
+            <a class="video-link" href="https://www.instagram.com/reel/DRqzILgjFpp/?igsh=MW1sa3AwMXB2ajE5NA==" aria-label="Open concert edit on Instagram">
+              <video muted loop playsinline preload="metadata">
+                <source src="concert-edit.mp4" type="video/mp4">
+              </video>
+              <span class="preview-fallback">Add concert-edit.mp4</span>
+            </a>
+            <div class="reel-meta">
+              <span>Concert Edit</span>
+              <strong>Live energy</strong>
+            </div>
+          </article>
+          <article class="reel-card">
+            <a class="video-link" href="https://www.instagram.com/reel/DOVsO76ks6H/?igsh=YWV6bmFkeXR3b3d5" aria-label="Open festival edit on Instagram">
+              <video muted loop playsinline preload="metadata">
+                <source src="festival-edit.mp4" type="video/mp4">
+              </video>
+              <span class="preview-fallback">Add festival-edit.mp4</span>
+            </a>
+            <div class="reel-meta">
+              <span>Festival Edit</span>
+              <strong>Festival reel</strong>
+            </div>
+          </article>
+          <article class="reel-card">
+            <a class="video-link" href="https://www.instagram.com/reel/DLcL3sTMYXC/?igsh=dmI3ZXVuZmppOG4w" aria-label="Open bike edit on Instagram">
+              <video muted loop playsinline preload="metadata">
+                <source src="bike-edit.mp4" type="video/mp4">
+              </video>
+              <span class="preview-fallback">Add bike-edit.mp4</span>
+            </a>
+            <div class="reel-meta">
+              <span>Bike Edit</span>
+              <strong>Motion edit</strong>
+            </div>
+          </article>
+          <article class="reel-card">
+            <a class="video-link" href="https://www.instagram.com/reel/DH57GKbSUe5/?igsh=YWFnc2Q3dmwxNWV5" aria-label="Open pre-wedding edit on Instagram">
+              <video muted loop playsinline preload="metadata">
+                <source src="pre-wedding-edit.mp4" type="video/mp4">
+              </video>
+              <span class="preview-fallback">Add pre-wedding-edit.mp4</span>
+            </a>
+            <div class="reel-meta">
+              <span>Pre-Wedding</span>
+              <strong>Couple story</strong>
+            </div>
+          </article>
+          <article class="reel-card">
+            <a class="video-link" href="https://www.instagram.com/reel/DE5Qs52Mz2F/?igsh=eWM1YmJxcm1iNTRn" aria-label="Open corporate edit on Instagram">
+              <video muted loop playsinline preload="metadata">
+                <source src="corporate-edit.mp4" type="video/mp4">
+              </video>
+              <span class="preview-fallback">Add corporate-edit.mp4</span>
+            </a>
+            <div class="reel-meta">
+              <span>Corporate Edit</span>
+              <strong>Business edit</strong>
+            </div>
+          </article>
+        </div>
+
+        <div class="portfolio-actions">
+          <a class="text-link" href="https://www.instagram.com/reel/DH0mzWNyueV/?igsh=MXRnbG15dDk3eWRjYQ==">
+            View additional pre-wedding edit
+          </a>
+          <a class="text-link" href="https://instagram.com/darling_darsh____">
+            Explore more on Instagram
+          </a>
+        </div>
+      </section>
+
+      <section class="section services" id="services">
+        <div class="section-heading">
+          <p class="eyebrow">Services</p>
+          <h2>Production and post-production</h2>
+        </div>
+        <div class="service-list">
+          <div>
+            <h3>Videography</h3>
+            <p>Event coverage, creator shoots, cinematic reels, pre-wedding videos, and brand visuals.</p>
+          </div>
+          <div>
+            <h3>Video Editing</h3>
+            <p>Story structure, pacing, transitions, music sync, color treatment, captions, and delivery.</p>
+          </div>
+          <div>
+            <h3>Social Content</h3>
+            <p>High-retention reels for creators, local businesses, launches, campaigns, and events.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact">
+        <div>
+          <p class="eyebrow">Inquiry</p>
+          <h2>Let us plan your next video.</h2>
+          <p>
+            Share the project type, shoot date, location, reference style, and expected delivery
+            timeline on WhatsApp.
+          </p>
+        </div>
+        <div class="contact-panel">
+          <span class="contact-label">Direct booking inquiries</span>
+          <a
+            class="button primary"
+            href="https://wa.me/917483284015?text=Hi%20Darshan%2C%20I%20want%20to%20inquire%20about%20a%20videography%20or%20editing%20project."
+          >
+            Contact on WhatsApp
+          </a>
+          <a href="mailto:darshanba420@gmail.com">darshanba420@gmail.com</a>
+          <a href="https://instagram.com/darling_darsh____">@darling_darsh____</a>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
